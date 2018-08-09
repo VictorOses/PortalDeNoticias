@@ -1,50 +1,11 @@
 ﻿@model PortalDeNoticias.Models.Noticia
 
 @{
-    ViewBag.Title = "Detalhes";
+    ViewBag.Title = "Detalhes da Notícia";
 }
 
-<h2>Detalhes</h2>
+<h2>@Model.Titulo</h2>
 
-<div>
-    <h4>Noticia</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
+<p>Publicado por <strong>@Model.Autor</strong> em <strong>@Model.Data.ToString("dd/MM/yyyy")</strong></p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Autor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Autor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Data)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Data)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Conteudo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Conteudo)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<p>@Model.Conteudo</p>
